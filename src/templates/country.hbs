@@ -1,14 +1,17 @@
-<div class='flex'>
+<div class="wrapper">
     <img src='{{flags.svg}}' alt='flag' width='30' height='30' />
     <h2>{{name.official}}</h2>
 </div>
 <div>
     <p>Capital: <span>{{capital}}</span></p>
     <p>Population: <span>{{population}}</span></p>
-    <p class='lang'>Languages:</p>
-    <ul class='languages-list'>
+    <p class='lang'>Languages: <span>
         {{#each languages}}
-        <li><span>{{this}}</span></li>
+        {{#if @last}}
+        {{this}}
+        {{else}}
+        {{this }},
+        {{/if}}
         {{/each}}
-    </ul>
-</div>
+        </span>
+    </p>

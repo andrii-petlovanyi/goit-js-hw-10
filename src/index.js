@@ -35,12 +35,12 @@ function renderCountryCard(countries) {
     return;
   } else if (countries.length === 1) {
     let markup = countryTempl(...countries);
+    refs.countryList.classList.add('hidden');
     refs.countryCard.innerHTML = markup;
-    console.log(...countries);
   } else if (countries.length > 1 && countries.length < 10) {
     let markup = countriesTempl(countries);
+    refs.countryList.classList.remove('hidden');
     refs.countryList.innerHTML = markup;
-    console.log(countries);
   }
 }
 
@@ -48,8 +48,9 @@ function clearRender() {
   refs.countryList.innerHTML = '';
   refs.countryCard.innerHTML = '';
 }
+
 function onFetchError() {
-  Notiflix.Notify.warning(
+  Notiflix.Notify.failure(
     'Too many matches found. Please enter a more specific name.'
   );
 }
