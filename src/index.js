@@ -1,6 +1,6 @@
 import './css/styles.css';
 import debounce from './modules/debounce';
-import fetchCountries from './fetchCountries';
+import { fetchCountries } from './fetchCountries';
 import countryTempl from './templates/country.hbs';
 import countriesTempl from './templates/countries.hbs';
 import Notiflix from 'notiflix';
@@ -19,7 +19,7 @@ refs.input.addEventListener(
 
 function getInputCountryName(e) {
   clearRender();
-  let countryName = e.target.value;
+  let countryName = e.target.value.trim();
   if (!countryName.length) {
     return;
   }
