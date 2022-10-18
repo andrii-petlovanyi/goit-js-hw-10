@@ -27,7 +27,7 @@ function getEnteredCountryName(e) {
   fetchCountries(countryName).then(renderCountriesMarkup).catch(onFetchError);
 }
 
-function renderCountriesMarkup(countries) {
+function renderCountriesMarkup(countries = {}) {
   if (countries.length > 10) {
     clearRenderMarkup();
     Notiflix.Notify.info(
