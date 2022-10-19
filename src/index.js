@@ -52,7 +52,5 @@ function clearRenderMarkup() {
 
 function onFetchError() {
   clearRenderMarkup();
-  Notiflix.Notify.failure(
-    'Too many matches found. Please enter a more specific name.'
-  );
+  Notiflix.Notify.failure('Oops, there is no country with that name');
 }
